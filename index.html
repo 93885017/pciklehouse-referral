@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pickle House - Referral Program</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Small utility to handle fade-in animations natively */
+        .fade-in { animation: fadeIn 0.2s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50 font-sans text-gray-800">
+
+    <!-- Hero Section -->
+    <div class="bg-[#111111] text-white overflow-hidden relative">
+        <div class="absolute inset-0 opacity-20">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1" stroke-opacity="0.2"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-6 py-20 relative z-10 text-center">
+            <div class="flex justify-center items-center mb-6">
+                <img 
+                    src="https://scontent.cdninstagram.com/v/t51.82787-19/588017893_17851151166595671_7510770337524067170_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=111&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy43NTMuQzMifQ%3D%3D&_nc_ohc=CsSRf74uekcQ7kNvwFYRk9P&_nc_oc=AdoAqnKWz9EH7ABbYYiNEhHrxS-V3nrwbST4VmBzkyXFN2YpzN6Bc5ZzUEf7tMammrc&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=YHp56vVBtF8vii0Erv9cvg&_nc_ss=7b6a8&oh=00_Af5OL4giYRH0BJ5wh64l7gkGXqCVk9Ee-bSTEtrtIwc9Rw&oe=6A20F97A" 
+                    alt="The Pickle House Logo" 
+                    class="w-16 h-16 rounded-full mr-4 border-2 border-[#C4A052] object-cover bg-white"
+                />
+                <h2 class="text-xl tracking-widest text-[#C4A052] font-semibold">THE PICKLE HOUSE</h2>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+                The <span class="text-[#C4A052]">Give & Get</span> Program
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">
+                Why play alone? Invite your friends to the court. <br class="hidden md:block"/>They get rewarded for joining. You get rewarded for sharing.
+            </p>
+            <button onclick="openModal()" class="bg-[#C4A052] hover:bg-[#b08d42] text-black font-bold py-4 px-10 rounded-full text-lg transition duration-300 shadow-lg shadow-[#C4A052]/30 flex items-center mx-auto">
+                <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+                Get My Referral Code
+            </button>
+            <p class="mt-4 text-sm text-gray-400">Promotion Valid Until 30 Jun</p>
+        </div>
+    </div>
+
+    <!-- How it Works -->
+    <div class="max-w-6xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">How Double-Sided Rewards Work</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">We believe in mutual benefits. When your friend uses your unique link, you both walk away with incredible perks.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="bg-white p-8 rounded-2xl shadow-sm text-center border border-gray-100 relative">
+                <div class="w-16 h-16 bg-[#7A1A2A]/10 text-[#7A1A2A] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">1. Share Your Link</h3>
+                <p class="text-gray-600">Send your unique referral link to friends who haven't played at The Pickle House yet.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-sm text-center border border-gray-100 relative">
+                <div class="w-16 h-16 bg-[#C4A052]/10 text-[#C4A052] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">2. They Join or Book</h3>
+                <p class="text-gray-600">Your friend uses your link to book their first court or sign up for a membership tier.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-sm text-center border border-gray-100 relative">
+                <div class="w-16 h-16 bg-[#111111]/10 text-[#111111] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">3. You Both Win</h3>
+                <p class="text-gray-600">The rewards hit both of your accounts instantly. Beers, court hours, and extensions await!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Reward Calculator -->
+    <div class="bg-gray-100 py-20 border-y border-gray-200">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Calculate Your Rewards</h2>
+                <p class="text-gray-600">Select your current membership tier to see what you and your friends will earn.</p>
+            </div>
+
+            <!-- Tier Selectors -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12" id="tier-selectors">
+                <button onclick="setTier('RED')" id="btn-RED" class="px-8 py-3 rounded-full font-bold text-lg transition-all duration-300 border-2 bg-white text-gray-500 border-gray-200 hover:border-gray-300">RED MEMBER</button>
+                <button onclick="setTier('GOLD')" id="btn-GOLD" class="px-8 py-3 rounded-full font-bold text-lg transition-all duration-300 border-2 bg-white text-gray-500 border-gray-200 hover:border-gray-300">GOLD MEMBER</button>
+                <button onclick="setTier('BLACK')" id="btn-BLACK" class="px-8 py-3 rounded-full font-bold text-lg transition-all duration-300 border-2 bg-white text-gray-500 border-gray-200 hover:border-gray-300">BLACK MEMBER</button>
+            </div>
+
+            <!-- Rewards Display -->
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                <div id="reward-header" class="text-white py-4 px-8 text-center bg-[#7A1A2A]">
+                    <h3 id="reward-title" class="text-2xl font-bold tracking-wide">AS A RED MEMBER</h3>
+                </div>
+                
+                <div class="p-0 md:p-8" id="rewards-container">
+                    <!-- Rewards injected via JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Bonus Banner -->
+            <div id="bonus-banner" class="hidden text-center mt-6 flex items-center justify-center text-sm text-gray-500 font-medium bg-white py-3 px-6 rounded-full w-fit mx-auto shadow-sm border border-gray-200">
+                <svg class="text-[#C4A052] mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                *Bonus: Collect 4 "Free Off-Peak Hour" rewards to unlock a Bonus Free Peak Hour!
+            </div>
+        </div>
+    </div>
+
+    <!-- Real-Case Example Section -->
+    <div class="max-w-6xl mx-auto px-6 py-24">
+        <div class="bg-[#111111] rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+            
+            <div class="lg:w-1/2 p-12 text-white flex flex-col justify-center relative">
+                <div class="absolute top-0 right-0 p-8 opacity-10 text-[#C4A052]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                </div>
+                <div class="inline-block bg-[#7A1A2A] text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full w-fit mb-6">
+                    Real-World Example
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">The "Black Tier" Hack</h2>
+                <p class="text-gray-300 mb-6 text-lg leading-relaxed">
+                    David is a serious player looking to buy the premium 6-Month BLACK membership. He could sign up online normally... but he knows the rules of the game.
+                </p>
+                <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                    Instead of signing up alone, he asks his friend Marcus, who is already a Black Member, for a referral link. By simply clicking the link before buying, the magic happens:
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center text-[#C4A052] font-semibold text-lg bg-white/5 p-4 rounded-xl border border-white/10">
+                        <svg class="mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                        David gets a 1-Month Extension (7 months total!)
+                    </div>
+                    <div class="flex items-center text-[#C4A052] font-semibold text-lg bg-white/5 p-4 rounded-xl border border-white/10">
+                        <svg class="mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                        Marcus also gets a 1-Month Extension!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lg:w-1/2 bg-[#C4A052] p-12 flex items-center justify-center">
+                <div class="w-full max-w-md bg-white rounded-2xl p-8 shadow-2xl">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-[#111111] text-white rounded-full flex items-center justify-center mx-auto mb-2 text-xl font-bold shadow-lg">M</div>
+                            <p class="font-bold text-sm">Marcus</p>
+                            <p class="text-xs text-gray-500">Black Member</p>
+                        </div>
+                        <div class="flex-1 flex items-center justify-center px-4 relative">
+                            <div class="h-1 w-full bg-gray-200 border-t-2 border-dashed border-gray-300"></div>
+                            <div class="absolute bg-[#C4A052] text-xs font-bold px-3 py-1 rounded-full flex items-center border-2 border-white shadow-sm">
+                                <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+                                Invites
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gray-200 text-gray-600 border-2 border-dashed border-gray-400 rounded-full flex items-center justify-center mx-auto mb-2 text-xl font-bold">D</div>
+                            <p class="font-bold text-sm">David</p>
+                            <p class="text-xs text-gray-500">New Player</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 text-center relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-green-500"></div>
+                        <h4 class="font-bold text-gray-800 mb-4">Transaction Result</h4>
+                        <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm mb-3">
+                            <span class="text-sm font-semibold text-gray-600">Marcus receives:</span>
+                            <span class="text-sm font-bold text-green-600 bg-green-50 px-2 py-1 rounded">+1 Month Free</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                            <span class="text-sm font-semibold text-gray-600">David receives:</span>
+                            <span class="text-sm font-bold text-green-600 bg-green-50 px-2 py-1 rounded">+1 Month Free</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer / CTA -->
+    <div class="bg-white py-16 text-center border-t border-gray-200">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">Ready to Maximize Your Benefits?</h2>
+        <button onclick="openModal()" class="bg-[#7A1A2A] hover:bg-[#631421] text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 shadow-lg shadow-[#7A1A2A]/30">
+            Sign In & Copy Your Link
+        </button>
+        <p class="mt-8 text-xs text-gray-400 max-w-xl mx-auto px-6">
+            Terms and conditions apply. Promotion valid until 30 June. Extra guests limit and standard booking rules apply. Refer to the club's main policy for full details.
+        </p>
+    </div>
+
+    <!-- Referral Code Modal -->
+    <div id="referral-modal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-opacity">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 relative fade-in">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+            
+            <!-- FORM VIEW -->
+            <div id="modal-form-view">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-[#C4A052]/10 text-[#C4A052] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
+                    </div>
+                </div>
+                
+                <form id="referral-form" onsubmit="handleGetCode(event)" class="space-y-4">
+                    <div>
+                        <input
+                            type="text"
+                            id="phone-input"
+                            maxlength="4"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, ''); validateInput();"
+                            placeholder="e.g. 1234"
+                            class="w-full text-center text-3xl tracking-[0.5em] font-bold py-4 border-2 border-gray-200 rounded-xl focus:border-[#C4A052] outline-none transition-colors"
+                        />
+                    </div>
+                    
+                    <p id="error-message" class="hidden text-red-500 text-sm text-center bg-red-50 p-3 rounded-lg"></p>
+                    
+                    <button
+                        type="submit"
+                        id="submit-btn"
+                        disabled
+                        class="w-full bg-[#111111] hover:bg-black text-white font-bold py-4 rounded-xl transition duration-300 disabled:opacity-50 flex justify-center items-center"
+                    >
+                        Verify Identity
+                    </button>
+                </form>
+            </div>
+
+            <!-- SUCCESS VIEW (Hidden by default) -->
+            <div id="modal-success-view" class="hidden">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <!-- Dynamically populated via JS -->
+                    <h3 id="success-greeting" class="text-2xl font-bold text-gray-900">Hello XXXX</h3>
+                    <p id="success-subtitle" class="text-gray-500 mt-2">Your TIER Referral Code is below</p>
+                </div>
+                
+                <div class="text-center space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-2xl border-2 border-[#C4A052] border-dashed relative">
+                        <p class="text-sm text-gray-500 font-semibold mb-2 uppercase tracking-wider">Your Referral Code</p>
+                        <p id="displayed-code" class="text-3xl font-black text-gray-900 tracking-wider">XXXX-XXXX</p>
+                    </div>
+                    
+                    <button
+                        id="copy-btn"
+                        onclick="copyToClipboard()"
+                        class="w-full bg-[#C4A052] hover:bg-[#b08d42] text-black font-bold py-4 rounded-xl transition duration-300 flex justify-center items-center"
+                    >
+                        <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                        Copy Referral Code
+                    </button>
+                    <p class="text-sm text-gray-500">Share this code with your friends to unlock rewards for both of you!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Native JavaScript Application Logic -->
+    <script>
+        // Store Icons as strings for easy injection
+        const icons = {
+            Beer: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 11h1a3 3 0 0 1 0 6h-1"/><path d="M9 12v6"/><path d="M13 12v6"/><path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 2 11 2s2 1.5 3 1.5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"/><path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg>`,
+            Clock: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+            CalendarPlus: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><line x1="10" x2="14" y1="16" y2="16"/><line x1="12" x2="12" y1="14" y2="18"/></svg>`,
+            Trophy: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>`
+        };
+
+        const rewardData = {
+            RED: {
+                color: 'bg-[#7A1A2A]',
+                textColor: 'text-[#7A1A2A]',
+                lightBg: 'bg-[#7A1A2A]/10',
+                borderColor: 'border-[#7A1A2A]',
+                rewards: [
+                    { action: 'Books 1 RED Court', icon: 'Beer', you: '1 Free Draft Beer', friend: '1 Free Draft Beer' },
+                    { action: 'Joins GOLD (1-Year)', icon: 'Clock', you: '1-Month Gold Free', friend: '1 Free Off-Peak Hour' },
+                    { action: 'Joins BLACK (6-Month)', icon: 'CalendarPlus', you: '1 Free Peak Hour', friend: '1 Free Peak Hour' },
+                ]
+            },
+            GOLD: {
+                color: 'bg-[#C4A052]',
+                textColor: 'text-[#C4A052]',
+                lightBg: 'bg-[#C4A052]/10',
+                borderColor: 'border-[#C4A052]',
+                rewards: [
+                    { action: 'Books 1 RED Court', icon: 'Beer', you: '1 Free Draft Beer', friend: '1 Free Draft Beer' },
+                    { action: 'Joins GOLD (1-Year)', icon: 'Clock', you: '1 Free Off-Peak Hour*', friend: '1 Free Off-Peak Hour' },
+                    { action: 'Joins BLACK (6-Month)', icon: 'Trophy', you: 'Half-Price 1-Mo. Black Fee', friend: '1 Free Peak Hour' },
+                ]
+            },
+            BLACK: {
+                color: 'bg-[#111111]',
+                textColor: 'text-[#111111]',
+                lightBg: 'bg-gray-200',
+                borderColor: 'border-[#111111]',
+                rewards: [
+                    { action: 'Books 1 RED Court', icon: 'Beer', you: '1 Free Draft Beer', friend: '1 Free Draft Beer' },
+                    { action: 'Joins GOLD (1-Year)', icon: 'Clock', you: '1 Free Off-Peak Hour*', friend: '1 Free Off-Peak Hour' },
+                    { action: 'Joins BLACK (6-Month)', icon: 'CalendarPlus', you: '1-Month Black Extension', friend: '1-Month Black Extension' },
+                ]
+            }
+        };
+
+        // Initialize Calculator
+        function setTier(tierName) {
+            const data = rewardData[tierName];
+            
+            // Reset all buttons
+            ['RED', 'GOLD', 'BLACK'].forEach(t => {
+                const btn = document.getElementById(`btn-${t}`);
+                btn.className = `px-8 py-3 rounded-full font-bold text-lg transition-all duration-300 border-2 bg-white text-gray-500 border-gray-200 hover:border-gray-300`;
+            });
+            
+            // Set active button
+            const activeBtn = document.getElementById(`btn-${tierName}`);
+            activeBtn.className = `px-8 py-3 rounded-full font-bold text-lg transition-all duration-300 border-2 ${data.color} text-white border-transparent shadow-lg transform scale-105`;
+            
+            // Update Header
+            const header = document.getElementById('reward-header');
+            header.className = `text-white py-4 px-8 text-center ${data.color}`;
+            document.getElementById('reward-title').innerText = `AS A ${tierName} MEMBER`;
+            
+            // Render Rewards List
+            const container = document.getElementById('rewards-container');
+            container.innerHTML = ''; // Clear existing
+            
+            data.rewards.forEach((reward, index) => {
+                const row = document.createElement('div');
+                row.className = `flex flex-col md:flex-row items-center justify-between p-6 md:p-8 border-b border-gray-100 last:border-0 ${index % 2 === 0 ? 'bg-gray-50/50' : 'bg-white'}`;
+                
+                row.innerHTML = `
+                    <div class="w-full md:w-1/3 mb-6 md:mb-0 text-center md:text-left flex flex-col items-center md:items-start">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">When Your Friend</span>
+                        <div class="flex items-center text-lg font-bold text-gray-800">
+                            <span class="mr-3 ${data.textColor}">${icons[reward.icon]}</span>
+                            ${reward.action}
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3 flex flex-col sm:flex-row gap-4">
+                        <div class="flex-1 rounded-xl p-5 border-2 ${data.borderColor} bg-white relative overflow-hidden group hover:shadow-md transition-shadow">
+                            <div class="absolute top-0 right-0 w-16 h-16 ${data.lightBg} rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-1">You Get</span>
+                            <span class="text-lg font-extrabold ${data.textColor}">${reward.you}</span>
+                        </div>
+                        <div class="flex-1 rounded-xl p-5 border-2 border-green-500 bg-white relative overflow-hidden group hover:shadow-md transition-shadow">
+                            <div class="absolute top-0 right-0 w-16 h-16 bg-green-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-1">They Get</span>
+                            <span class="text-lg font-extrabold text-green-600">${reward.friend}</span>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+            
+            // Toggle Bonus Banner
+            const banner = document.getElementById('bonus-banner');
+            if (tierName === 'GOLD' || tierName === 'BLACK') {
+                banner.classList.remove('hidden');
+            } else {
+                banner.classList.add('hidden');
+            }
+        }
+
+        // Initialize default tier on load
+        setTier('RED');
+
+        // Modal & Form Logic
+        const modal = document.getElementById('referral-modal');
+        const formView = document.getElementById('modal-form-view');
+        const successView = document.getElementById('modal-success-view');
+        const phoneInput = document.getElementById('phone-input');
+        const submitBtn = document.getElementById('submit-btn');
+        const errorMsg = document.getElementById('error-message');
+        
+        let storedReferralCode = '';
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            resetModal();
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        function resetModal() {
+            phoneInput.value = '';
+            submitBtn.disabled = true;
+            errorMsg.classList.add('hidden');
+            formView.classList.remove('hidden');
+            successView.classList.add('hidden');
+            storedReferralCode = '';
+            
+            // Reset Copy Button
+            const copyBtn = document.getElementById('copy-btn');
+            copyBtn.className = "w-full bg-[#C4A052] hover:bg-[#b08d42] text-black font-bold py-4 rounded-xl transition duration-300 flex justify-center items-center";
+            copyBtn.innerHTML = `<svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg> Copy Referral Code`;
+        }
+
+        function validateInput() {
+            if (phoneInput.value.length === 4) {
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.disabled = true;
+            }
+        }
+
+        async function handleGetCode(e) {
+            e.preventDefault();
+            const phone = phoneInput.value;
+            
+            if (phone.length !== 4) return;
+
+            // Set Loading UI
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Searching...`;
+            errorMsg.classList.add('hidden');
+
+            try {
+                // Point securely to the PHP backend
+                const response = await fetch('./get-code.php', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ phone: phone })
+                });
+                
+                const rawText = await response.text(); // Get raw text to see exact server output
+                
+                if (!response.ok) {
+                    showError(`Server HTTP Error ${response.status}: ${rawText.substring(0, 80)}`);
+                    return;
+                }
+                
+                let data;
+                try {
+                    data = JSON.parse(rawText);
+                } catch (parseErr) {
+                    showError(`Server returned non-JSON data: ${rawText.substring(0, 100)}`);
+                    return;
+                }
+                
+                if (data.error) {
+                    showError(data.error);
+                } else if (data.success && data.referralCode) {
+                    showSuccess(phone, data.memberTier || 'Valued', data.referralCode);
+                } else {
+                    showError("Unexpected Server Response: " + rawText.substring(0, 150));
+                }
+
+            } catch (err) {
+                console.error(err);
+                showError("Network error: Could not reach the server.");
+            } finally {
+                // Restore button state
+                submitBtn.innerHTML = "Verify Identity";
+                submitBtn.disabled = false;
+            }
+        }
+
+        function showError(msg) {
+            errorMsg.innerText = msg;
+            errorMsg.classList.remove('hidden');
+        }
+
+        function showSuccess(phone, tier, code) {
+            storedReferralCode = code;
+            
+            // Populate success text based on the user's requirements
+            document.getElementById('success-greeting').innerText = `Hello ${phone}`;
+            document.getElementById('success-subtitle').innerText = `Your ${tier} tier Referral Code is below`;
+            document.getElementById('displayed-code').innerText = code;
+            
+            // Swap views
+            formView.classList.add('hidden');
+            successView.classList.remove('hidden');
+            successView.classList.add('fade-in');
+        }
+
+        function copyToClipboard() {
+            if (!storedReferralCode) return;
+            
+            const textArea = document.createElement("textarea");
+            textArea.value = storedReferralCode;
+            document.body.appendChild(textArea);
+            textArea.select();
+            
+            const copyBtn = document.getElementById('copy-btn');
+            
+            try {
+                document.execCommand('copy');
+                // Change UI to success state
+                copyBtn.className = "w-full bg-green-500 text-white font-bold py-4 rounded-xl transition duration-300 flex justify-center items-center";
+                copyBtn.innerHTML = `<svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Copied to Clipboard!`;
+                
+                // Revert back after 2 seconds
+                setTimeout(() => {
+                    copyBtn.className = "w-full bg-[#C4A052] hover:bg-[#b08d42] text-black font-bold py-4 rounded-xl transition duration-300 flex justify-center items-center";
+                    copyBtn.innerHTML = `<svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg> Copy Referral Code`;
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy', err);
+            }
+            document.body.removeChild(textArea);
+        }
+    </script>
+</body>
+</html>
